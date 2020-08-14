@@ -21,16 +21,16 @@ spending_counter = collections.Counter(spending_categories)
 top5 = spending_counter.most_common(5)
 
 # Separate keys and values into 2 lists
-category, count = zip(*top5)
+categories, count = zip(*top5)
 
 print(f"All ocurrencies {spending_counter}")
 print(f"Most common: {spending_counter.most_common(5)}")
-print(category)
+print(categories)
 print(count)
 
 # Using matplotlib
 
 fig, ax = plt.subplots()
-ax.bar(category, count)
+ax.bar(categories, count)
 ax.set_title('# of Purchases by Category')
 plt.show()
