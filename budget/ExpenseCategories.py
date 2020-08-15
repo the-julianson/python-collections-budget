@@ -1,5 +1,9 @@
 from . import Expense
+
+import timeit
+
 import matplotlib.pyplot as plt
+
 
 def main():
     expenses = Expense.Expenses()
@@ -10,9 +14,11 @@ def main():
     if divided_for_loop != divided_set_comp:
         print("Sets are NOT equal by == test")
 
-    for a,b in zip(divided_for_loop, divided_set_comp):
+    for a, b in zip(divided_for_loop, divided_set_comp):
         if not (a.issubset(b) and b.issubset(a)):
             print('Sets are NOT equal by subset test')
+    
+    timeit.timeit(stmt='pass', setup='''''', number=100000, globals=globals())
 
 if __name__ == "__main__":
     main()
